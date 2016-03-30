@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F440DBAD1CAC061400E335BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAC1CAC061400E335BF /* LoginViewController.m */; };
+		F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAF1CAC08D500E335BF /* SignupViewController.m */; };
 		F44C771E1CA9677F0077F1D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C771D1CA9677F0077F1D3 /* main.m */; };
 		F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C77201CA9677F0077F1D3 /* AppDelegate.m */; };
 		F44C77241CA9677F0077F1D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C77231CA9677F0077F1D3 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		F440DBAB1CAC061400E335BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F440DBAC1CAC061400E335BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F440DBAE1CAC08D500E335BF /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		F440DBAF1CAC08D500E335BF /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		F44C77191CA9677F0077F1D3 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44C771D1CA9677F0077F1D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F44C771F1CA9677F0077F1D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				F44C77231CA9677F0077F1D3 /* ViewController.m */,
 				F440DBAB1CAC061400E335BF /* LoginViewController.h */,
 				F440DBAC1CAC061400E335BF /* LoginViewController.m */,
+				F440DBAE1CAC08D500E335BF /* SignupViewController.h */,
+				F440DBAF1CAC08D500E335BF /* SignupViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */,
 				F44C77241CA9677F0077F1D3 /* ViewController.m in Sources */,
 				F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */,
 				F44C771E1CA9677F0077F1D3 /* main.m in Sources */,
