@@ -12,11 +12,11 @@
 		F44C771E1CA9677F0077F1D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C771D1CA9677F0077F1D3 /* main.m */; };
 		F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C77201CA9677F0077F1D3 /* AppDelegate.m */; };
 		F44C77241CA9677F0077F1D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C77231CA9677F0077F1D3 /* ViewController.m */; };
-		F44C77271CA9677F0077F1D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44C77251CA9677F0077F1D3 /* Main.storyboard */; };
 		F44C772A1CA9677F0077F1D3 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F44C77281CA9677F0077F1D3 /* ToDo.xcdatamodeld */; };
 		F44C772C1CA9677F0077F1D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F44C772B1CA9677F0077F1D3 /* Assets.xcassets */; };
 		F44C772F1CA9677F0077F1D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44C772D1CA9677F0077F1D3 /* LaunchScreen.storyboard */; };
 		F44C773C1CA974D50077F1D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44C773B1CA974D50077F1D3 /* CoreLocation.framework */; };
+		F472A61F1CAE965400FE29CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F472A61E1CAE965400FE29CF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		F44C77201CA9677F0077F1D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F44C77221CA9677F0077F1D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F44C77231CA9677F0077F1D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F44C77261CA9677F0077F1D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F44C77291CA9677F0077F1D3 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		F44C772B1CA9677F0077F1D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F44C772E1CA9677F0077F1D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F44C77301CA9677F0077F1D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44C773B1CA974D50077F1D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F472A61E1CAE965400FE29CF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 		F44C77381CA96C260077F1D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F44C77251CA9677F0077F1D3 /* Main.storyboard */,
 				F44C772D1CA9677F0077F1D3 /* LaunchScreen.storyboard */,
+				F472A61E1CAE965400FE29CF /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -193,9 +193,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F472A61F1CAE965400FE29CF /* Main.storyboard in Resources */,
 				F44C772F1CA9677F0077F1D3 /* LaunchScreen.storyboard in Resources */,
 				F44C772C1CA9677F0077F1D3 /* Assets.xcassets in Resources */,
-				F44C77271CA9677F0077F1D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,14 +218,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F44C77251CA9677F0077F1D3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F44C77261CA9677F0077F1D3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F44C772D1CA9677F0077F1D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
