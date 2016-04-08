@@ -11,7 +11,7 @@
 @implementation SignupViewController
 
 - (IBAction)backButtonTapped:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

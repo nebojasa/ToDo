@@ -17,6 +17,7 @@
 		F44C772F1CA9677F0077F1D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44C772D1CA9677F0077F1D3 /* LaunchScreen.storyboard */; };
 		F44C773C1CA974D50077F1D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44C773B1CA974D50077F1D3 /* CoreLocation.framework */; };
 		F472A61F1CAE965400FE29CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F472A61E1CAE965400FE29CF /* Main.storyboard */; };
+		F4DF0AC61CB7ED36008C13AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DF0AC51CB7ED36008C13AA /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		F44C77301CA9677F0077F1D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44C773B1CA974D50077F1D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F472A61E1CAE965400FE29CF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F4DF0AC41CB7ED36008C13AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		F4DF0AC51CB7ED36008C13AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				F440DBAC1CAC061400E335BF /* LoginViewController.m */,
 				F440DBAE1CAC08D500E335BF /* SignupViewController.h */,
 				F440DBAF1CAC08D500E335BF /* SignupViewController.m */,
+				F4DF0AC41CB7ED36008C13AA /* HomeViewController.h */,
+				F4DF0AC51CB7ED36008C13AA /* HomeViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */,
 				F44C771E1CA9677F0077F1D3 /* main.m in Sources */,
 				F44C772A1CA9677F0077F1D3 /* ToDo.xcdatamodeld in Sources */,
+				F4DF0AC61CB7ED36008C13AA /* HomeViewController.m in Sources */,
 				F440DBAD1CAC061400E335BF /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
