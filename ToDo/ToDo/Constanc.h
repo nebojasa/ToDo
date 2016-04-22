@@ -19,7 +19,9 @@
 #define kTurquoiseColor             COLOR(72.0, 211.0, 194.0, 1.0)
 
 //Enums
-
+//User defaults
+static NSString *const USER_IMAGE   =@"USER_IMAGE";
+static NSString *const WALKTROUGH_PRESENTED   =@"WalkThrough";
 typedef NS_ENUM(NSInteger, TaskGroup) {
     COMPLETED_TASK_GROUP = 1,
     NOT_COMPLETED_TASK_GROUP,

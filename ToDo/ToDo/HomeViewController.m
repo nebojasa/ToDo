@@ -113,8 +113,26 @@
     
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+      if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTROUGH_PRESENTED]) {
+          [self performSegueWithIdentifier:@"WalkThrough" sender:self];
+    }
 }
 
+#pragma mark - Private API
+
+-(void)configureProfileImage{
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE];
+        
+        self.profileImageView.image = [UIImage imageWithData:data];
+    }
+}
 
 #pragma mark - UIImagePickerControllerDelegate
 
@@ -131,6 +149,12 @@
     }
     
     self.profileImageView.image = image;
+    
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     //After picking image, dismiss image
     [picker dismissViewControllerAnimated:YES completion:nil];
