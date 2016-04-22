@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+
+
 @implementation AppDelegate
 
 
@@ -15,8 +17,9 @@
     return YES;
 }
 
+
 - (void)applicationWillTerminate:(UIApplication *)application {
-     [self saveContext];
+    [self saveContext];
 }
 
 #pragma mark - Core Data stack
@@ -26,11 +29,12 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "rs.cubes.ToDo" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
-    
+    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
@@ -40,17 +44,14 @@
 }
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
- 
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ToDo.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
- 
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
         dict[NSLocalizedFailureReasonErrorKey] = failureReason;
@@ -59,13 +60,12 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     return _persistentStoreCoordinator;
 }
 
 
 - (NSManagedObjectContext *)managedObjectContext {
-        if (_managedObjectContext != nil) {
+    if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
     
@@ -85,7 +85,7 @@
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-                        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

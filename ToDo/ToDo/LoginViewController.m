@@ -30,10 +30,10 @@
 
 - (void)configureTextField:(UITextField *)textField {
     if (textField.placeholder.length > 0) {
-//        UIColor *color = [UIColor colorWithRed:117.0/255.0
-//                                         green:113.0/255.0
-//                                          blue:111.0/255.0
-//                                         alpha:1.0];
+        //        UIColor *color = [UIColor colorWithRed:117.0/255.0
+        //                                         green:113.0/255.0
+        //                                          blue:111.0/255.0
+        //                                         alpha:1.0];
         
         NSDictionary *attributes = @{
                                      NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Regular" size:14.0],
@@ -51,22 +51,46 @@
 }
 
 - (IBAction)signInButtonTapped:(UIButton *)sender {
+    
+    sender.enabled = NO;
+    
     [self.spinerView startAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
+    });
 }
 
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
     NSLog(@"Sign up...");
 }
 
-- (void)animate{
-        [UIView animateWithDuration:0.4 animations:^{
-            CGRect frame = self.footerView.frame;
-            frame.origin.y = 625;
-            self.footerView.frame = frame;
-        }];
+
+#pragma mark - Public API
+
+-(void)prepareForAnimation {
+    CGRect submitButtonFrame = self.submitButton.frame;
+    submitButtonFrame.origin.x = self.submitButton.frame.size.width;
+    self.submitButton.frame = submitButtonFrame;
     
-    //Sign in button
-    [UIView animateWithDuration:0.4
+    
+    CGRect footerViewFrame = self.footerView.frame;
+    footerViewFrame.origin.y = self.footerView.frame.size.height;
+    self.footerView.frame = footerViewFrame;
+    
+    
+    // Mask Logo View
+    //self.maskLogoView.layer.cornerRadius = self.maskLogoView.frame.size.width/2;
+    
+}
+
+-(void)animate{
+    [UIView animateWithDuration:2.5 animations:^{
+        self.maskLogoView.alpha = 0.0;
+        
+    }];
+    
+    [UIView animateWithDuration:0.5
                           delay:0.2
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -74,48 +98,39 @@
                          submitButtonFrame.origin.x = ZERO_VALUE;
                          self.submitButton.frame = submitButtonFrame;
                          
-                     }completion:NULL];
+                     } completion:NULL];
     
-    //Mask View
-    [UIView animateWithDuration:1.0
-                          delay:0.8
-                        options:UIViewAnimationOptionCurveEaseInOut
+    [UIView animateWithDuration:0.8
                      animations:^{
-                         self.maskLogoView.alpha = ZERO_VALUE;
-                     }completion:NULL];
-}
-
-- (void)prepareForAnimations{
+                         CGRect frame = self.footerView.frame;
+                         frame.origin.y = 625;
+                         self.footerView.frame = frame;
+                     }];
     
-    //Sign in button
-    CGRect submitButtonFrame = self.submitButton.frame;
-    submitButtonFrame.origin.x = self.view.frame.size.width;
-    self.submitButton.frame = submitButtonFrame;
     
-//    //Footer view
-    CGRect footerViewFrame = self.footerView.frame;
-    footerViewFrame.origin.y = self.view.frame.size.height;
-    self.footerView.frame = footerViewFrame;
+    
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.spinerView stopAnimating];
+    
     [self configureTextField:self.usernameTextField];
     [self configureTextField:self.passwordTextField];
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [self animate];
-    [self.maskLogoView setAlpha:0.0];
     
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [self prepareForAnimations];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.spinerView stopAnimating];
+    [self prepareForAnimation];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self animate];
 }
 
 #pragma mark - UITextFieldDelegate

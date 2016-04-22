@@ -7,31 +7,134 @@
 //
 
 #import "HomeViewController.h"
+#import "TaskTableViewCell.h"
+#import "Constanc.h"
 
-@interface HomeViewController ()
+@interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end
 
 @implementation HomeViewController
 
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TaskTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    cell.taskTitleLabel.text = [NSString stringWithFormat: @"red %ld", indexPath.row];
+    
+    switch (indexPath.row) {
+            
+        case COMPLETED_TASK_GROUP:
+            cell.taskGroupView.backgroundColor = kTurquoiseColor;
+            break;
+            
+        case NOT_COMPLETED_TASK_GROUP:
+            cell.taskGroupView.backgroundColor = kPurpleColor;
+            break;
+            
+        case IN_PROGRESS_TASK_GROUP:
+            cell.taskGroupView.backgroundColor = kOrangeColor;
+            break;
+            
+        default:
+            cell.taskGroupView.backgroundColor = [UIColor redColor];
+            break;
+    }
+    
+    return cell;
+}
+
+
+
+- (void)pickImage {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose source:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+        pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        pickerController.delegate = self;
+        pickerController.allowsEditing = YES;
+        [self presentViewController:pickerController animated:YES completion:nil];
+        
+        
+    }]];
+    
+    if (![UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] || [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
+            pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            pickerController.delegate = self;
+            pickerController.allowsEditing = YES;
+            [self presentViewController:pickerController animated:YES completion:nil];
+            
+        }]];
+        
+    }
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(pickImage)];
+    self.profileImageView.userInteractionEnabled = YES;
+    tap.numberOfTapsRequired = 1;
+    [self.profileImageView addGestureRecognizer:tap];
+    
+    
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (!image) {
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    
+    self.profileImageView.image = image;
+    
+    //After picking image, dismiss image
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
 
 @end
