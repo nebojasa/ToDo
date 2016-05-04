@@ -23,7 +23,6 @@
     return 70;
 }
 
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -61,8 +60,6 @@
     
     return cell;
 }
-
-
 
 - (void)pickImage {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose source:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -113,8 +110,13 @@
     
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self performSegueWithIdentifier:@"Websegue" sender:self];
+//    });
 
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -123,9 +125,13 @@
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - Private API
 
--(void)configureProfileImage{
+- (void)configureProfileImage {
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
         NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE];

@@ -22,6 +22,8 @@
 		F44C772F1CA9677F0077F1D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44C772D1CA9677F0077F1D3 /* LaunchScreen.storyboard */; };
 		F44C773C1CA974D50077F1D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44C773B1CA974D50077F1D3 /* CoreLocation.framework */; };
 		F4DF0AC61CB7ED36008C13AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DF0AC51CB7ED36008C13AA /* HomeViewController.m */; };
+		F4F6B8EA1CDA27B40000FB28 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F6B8E91CDA27B40000FB28 /* StatisticsViewController.m */; };
+		F4F6B8EE1CDA2E3D0000FB28 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F6B8ED1CDA2E3D0000FB28 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,11 @@
 		F44C773B1CA974D50077F1D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F4DF0AC41CB7ED36008C13AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F4DF0AC51CB7ED36008C13AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F4F6B8E81CDA27B40000FB28 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		F4F6B8E91CDA27B40000FB28 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		F4F6B8EC1CDA2E3D0000FB28 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		F4F6B8ED1CDA2E3D0000FB28 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		F4F6B8EF1CDA35230000FB28 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +108,7 @@
 				F44C772B1CA9677F0077F1D3 /* Assets.xcassets */,
 				F44C77301CA9677F0077F1D3 /* Info.plist */,
 				F44C771D1CA9677F0077F1D3 /* main.m */,
+				F4F6B8EF1CDA35230000FB28 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,9 +156,13 @@
 				52B3AF401CCE48E200529B95 /* WalkthroughItem.h */,
 				52B3AF411CCE48E200529B95 /* WalkthroughItem.m */,
 				F440DBAE1CAC08D500E335BF /* SignupViewController.h */,
+				F4F6B8E81CDA27B40000FB28 /* StatisticsViewController.h */,
+				F4F6B8E91CDA27B40000FB28 /* StatisticsViewController.m */,
 				F440DBAF1CAC08D500E335BF /* SignupViewController.m */,
 				F4DF0AC41CB7ED36008C13AA /* HomeViewController.h */,
 				F4DF0AC51CB7ED36008C13AA /* HomeViewController.m */,
+				F4F6B8EC1CDA2E3D0000FB28 /* WebViewController.h */,
+				F4F6B8ED1CDA2E3D0000FB28 /* WebViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -236,8 +248,10 @@
 				F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */,
 				F44C77241CA9677F0077F1D3 /* ViewController.m in Sources */,
 				F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */,
+				F4F6B8EA1CDA27B40000FB28 /* StatisticsViewController.m in Sources */,
 				F44C771E1CA9677F0077F1D3 /* main.m in Sources */,
 				529C92371CCA1BAF009C8936 /* TaskTableViewCell.m in Sources */,
+				F4F6B8EE1CDA2E3D0000FB28 /* WebViewController.m in Sources */,
 				F44C772A1CA9677F0077F1D3 /* ToDo.xcdatamodeld in Sources */,
 				52B3AF3C1CCE3F8800529B95 /* WalktroughCollectionViewCell.m in Sources */,
 				5239DDCC1CCA52780005F76C /* WalkTroughViewController.m in Sources */,
@@ -355,6 +369,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;
@@ -368,6 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.cubes.ToDo;

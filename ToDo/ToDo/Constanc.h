@@ -18,6 +18,11 @@
 #define kPurpleColor                COLOR(187.0, 114.0, 255.0, 1.0)
 #define kTurquoiseColor             COLOR(72.0, 211.0, 194.0, 1.0)
 
+//Strings and Numbers
+
+#define ZERO_VALUE                  0.0
+
+
 //Enums
 //User defaults
 static NSString *const USER_IMAGE   =@"USER_IMAGE";
