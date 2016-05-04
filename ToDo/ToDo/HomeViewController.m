@@ -110,10 +110,15 @@
     
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
-    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self performSegueWithIdentifier:@"Websegue" sender:self];
+
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self performSegueWithIdentifier:@"Statistics" sender:self];
 //    });
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    [self performSegueWithIdentifier:@"Websegue" sender:self];
+//    });
+    
 
 }
 
