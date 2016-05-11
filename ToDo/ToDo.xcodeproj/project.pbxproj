@@ -12,6 +12,11 @@
 		529C92371CCA1BAF009C8936 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C92361CCA1BAF009C8936 /* TaskTableViewCell.m */; };
 		52B3AF3C1CCE3F8800529B95 /* WalktroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3AF3B1CCE3F8800529B95 /* WalktroughCollectionViewCell.m */; };
 		52B3AF421CCE48E200529B95 /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3AF411CCE48E200529B95 /* WalkthroughItem.m */; };
+		F40490221CE3575600A68732 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F404901F1CE3575600A68732 /* Task+CoreDataProperties.m */; };
+		F40490231CE3575600A68732 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = F40490211CE3575600A68732 /* Task.m */; };
+		F40490271CE35A7000A68732 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F40490261CE35A7000A68732 /* DataManager.m */; };
+		F40490291CE35B4A00A68732 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40490281CE35B4A00A68732 /* MapKit.framework */; };
+		F404902B1CE35B5500A68732 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404902A1CE35B5500A68732 /* CoreData.framework */; };
 		F440DBAD1CAC061400E335BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAC1CAC061400E335BF /* LoginViewController.m */; };
 		F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAF1CAC08D500E335BF /* SignupViewController.m */; };
 		F44C771E1CA9677F0077F1D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C771D1CA9677F0077F1D3 /* main.m */; };
@@ -37,6 +42,14 @@
 		52B3AF3B1CCE3F8800529B95 /* WalktroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalktroughCollectionViewCell.m; sourceTree = "<group>"; };
 		52B3AF401CCE48E200529B95 /* WalkthroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughItem.h; sourceTree = "<group>"; };
 		52B3AF411CCE48E200529B95 /* WalkthroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughItem.m; sourceTree = "<group>"; };
+		F404901E1CE3575600A68732 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Task+CoreDataProperties.h"; path = "../Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F404901F1CE3575600A68732 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Task+CoreDataProperties.m"; path = "../Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F40490201CE3575600A68732 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = ../Task.h; sourceTree = "<group>"; };
+		F40490211CE3575600A68732 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Task.m; path = ../Task.m; sourceTree = "<group>"; };
+		F40490251CE35A7000A68732 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		F40490261CE35A7000A68732 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		F40490281CE35B4A00A68732 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F404902A1CE35B5500A68732 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F440DBAB1CAC061400E335BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F440DBAC1CAC061400E335BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F440DBAE1CAC08D500E335BF /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
@@ -66,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F404902B1CE35B5500A68732 /* CoreData.framework in Frameworks */,
+				F40490291CE35B4A00A68732 /* MapKit.framework in Frameworks */,
 				F44C773C1CA974D50077F1D3 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,10 +88,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F40490241CE35A2C00A68732 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				F40490251CE35A7000A68732 /* DataManager.h */,
+				F40490261CE35A7000A68732 /* DataManager.m */,
+			);
+			name = Utilites;
+			path = ToDo;
+			sourceTree = "<group>";
+		};
 		F44C77101CA9677F0077F1D3 = {
 			isa = PBXGroup;
 			children = (
 				F44C771B1CA9677F0077F1D3 /* ToDo */,
+				F40490241CE35A2C00A68732 /* Utilites */,
 				F44C773A1CA96C980077F1D3 /* Frameworks */,
 				F44C771A1CA9677F0077F1D3 /* Products */,
 			);
@@ -126,6 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				F44C77281CA9677F0077F1D3 /* ToDo.xcdatamodeld */,
+				F404901E1CE3575600A68732 /* Task+CoreDataProperties.h */,
+				F404901F1CE3575600A68732 /* Task+CoreDataProperties.m */,
+				F40490201CE3575600A68732 /* Task.h */,
+				F40490211CE3575600A68732 /* Task.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -170,6 +200,8 @@
 		F44C773A1CA96C980077F1D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F404902A1CE35B5500A68732 /* CoreData.framework */,
+				F40490281CE35B4A00A68732 /* MapKit.framework */,
 				F44C773B1CA974D50077F1D3 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -247,6 +279,7 @@
 			files = (
 				F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */,
 				F44C77241CA9677F0077F1D3 /* ViewController.m in Sources */,
+				F40490221CE3575600A68732 /* Task+CoreDataProperties.m in Sources */,
 				F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */,
 				F4F6B8EA1CDA27B40000FB28 /* StatisticsViewController.m in Sources */,
 				F44C771E1CA9677F0077F1D3 /* main.m in Sources */,
@@ -254,8 +287,10 @@
 				F4F6B8EE1CDA2E3D0000FB28 /* WebViewController.m in Sources */,
 				F44C772A1CA9677F0077F1D3 /* ToDo.xcdatamodeld in Sources */,
 				52B3AF3C1CCE3F8800529B95 /* WalktroughCollectionViewCell.m in Sources */,
+				F40490231CE3575600A68732 /* Task.m in Sources */,
 				5239DDCC1CCA52780005F76C /* WalkTroughViewController.m in Sources */,
 				F4DF0AC61CB7ED36008C13AA /* HomeViewController.m in Sources */,
+				F40490271CE35A7000A68732 /* DataManager.m in Sources */,
 				52B3AF421CCE48E200529B95 /* WalkthroughItem.m in Sources */,
 				F440DBAD1CAC061400E335BF /* LoginViewController.m in Sources */,
 			);

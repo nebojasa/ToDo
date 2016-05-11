@@ -12,6 +12,11 @@
 //Macros
 #define COLOR(r,g,b,a)              [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
+//Notifications
+
+static NSString *const CITY_CHANGED         =@"CITY_CHANGED";
+
+
 //Colors
 
 #define kOrangeColor                COLOR(254.0, 172.0, 73.0, 1.0)
