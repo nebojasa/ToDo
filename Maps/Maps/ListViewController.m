@@ -20,7 +20,7 @@
 
 #pragma mark - Properties
 
-- (NSMutableArray *)itemsArray {
+- (NSMutableArray *)itemsArray {//lazy loading..
     if (!_itemsArray) {
         _itemsArray = [[NSMutableArray alloc] init];
     }
@@ -35,10 +35,10 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     
-    Location *london = [[Location alloc] initWithName:@"London" andCoordinates:CLLocationCoordinate2DMake(51.50, 0.12)];
+    Location *london = [[Location alloc] initWithName:@"London" andCoordinates:CLLocationCoordinate2DMake(51.50, 0.12)];//long,lat
     Location *moscow = [[Location alloc] initWithName:@"Moscow" andCoordinates:CLLocationCoordinate2DMake(55.75, 37.61)];
     
-    [self.itemsArray addObject:london];
+    [self.itemsArray addObject:london];//dodavanje lokacije u items array
     [self.itemsArray addObject:moscow];
 }
 
@@ -47,7 +47,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"MapSegue"]) {
         MapViewController *toViewController = segue.destinationViewController;
-        toViewController.location = self.selectedLocation;
+        toViewController.location = self.selectedLocation;//selektovana celija se salje u MapViewController
     }
 }
 
@@ -76,7 +76,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    self.selectedLocation = [self.itemsArray objectAtIndex:indexPath.row];
+    self.selectedLocation = [self.itemsArray objectAtIndex:indexPath.row];//Selektovana celija iz itemsarray koristim pomocnu promenljivu!
     
     [self performSegueWithIdentifier:@"MapSegue" sender:self];
 }

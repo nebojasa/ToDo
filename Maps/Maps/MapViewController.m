@@ -23,11 +23,11 @@
 }
 
 #pragma mark - Private API
-
+    //Metoda koja zumira mapu na odgovarajucu koordinatu
 - (void)zoomMapToCoordinate:(CLLocationCoordinate2D)coordinate {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kRegionRadius * 2.0, kRegionRadius * 2.0);
-    MKCoordinateRegion coordinateRegion = [self.mapView regionThatFits:region];
-    [self.mapView setRegion:coordinateRegion animated:YES];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kRegionRadius * 2.0, kRegionRadius * 2.0);//kreira region
+    MKCoordinateRegion coordinateRegion = [self.mapView regionThatFits:region];//kreira coordinateRegion koji tacno upada u region
+    [self.mapView setRegion:coordinateRegion animated:YES];//setovanje mapView na coordinateRegion animirano
 }
 
 #pragma mark - View lifecycle
@@ -42,7 +42,7 @@
     });
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self zoomMapToCoordinate:self.location.coordinates];
+        [self zoomMapToCoordinate:self.location.coordinates];//zumiranje mape na koordinatu lokacije
     });
 }
 
@@ -54,18 +54,18 @@
         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
     }
     
-    pinView.canShowCallout = YES;
-    pinView.animatesDrop = YES;
-    pinView.pinTintColor = [UIColor colorWithRed:0.18 green:0.54 blue:0.49 alpha:1.0];
+    pinView.canShowCallout = YES;//prikazivanje baloncica
+    pinView.animatesDrop = YES;//animacija pada ciode ali samo za pin!
+    pinView.pinTintColor = [UIColor colorWithRed:0.18 green:0.54 blue:0.49 alpha:1.0];//sredjivanje pina boje
     
     // UIButton
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    button.frame = CGRectMake(0, 0, 40, 40);
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];//info dugme
+    button.frame = CGRectMake(0, 0, 40, 40);//definisanje frejma
     pinView.rightCalloutAccessoryView = button;
     
     return pinView;
 }
-
+    // Metoda koja omogucava da se klikne na dugme MapKitDelegate
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     NSLog(@"Tapped");
 }

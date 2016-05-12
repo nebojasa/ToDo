@@ -21,7 +21,7 @@
     return self;
 }
 
-#pragma mark - MKAnnotation
+#pragma mark - MKAnnotationProtocol
 
 - (NSString *)title {
     return self.name;
