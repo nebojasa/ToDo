@@ -12,7 +12,8 @@
 #import "Task+CoreDataProperties.h"
 
 @implementation Task (CoreDataProperties)
-
+    //kada radimo sa bazom i definisemo entitet i generisi mi subclasu za entitete
+    //dok nasa app radi svi propertiji se generisu dinamicki
 @dynamic date;
 @dynamic desc;
 @dynamic group;

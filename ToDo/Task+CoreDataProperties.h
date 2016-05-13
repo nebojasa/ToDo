@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Task (CoreDataProperties)
-
+    //svojstva koja se nalaze u bazi
 @property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) NSString *desc;
 @property (nullable, nonatomic, retain) NSNumber *group;
