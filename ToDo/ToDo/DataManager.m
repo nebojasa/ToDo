@@ -33,7 +33,7 @@
             
             self.userLocality = placemark.locality;
             
-            //
+            //Videcu sta ovde ide
             //
             //
             //
