@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 
 @interface DataManager()
-@property (strong, nonatomic) NSManagedObjectContext *manageObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *manageObjectContext;//kljucna stvar za baze se radi preko ManageObjectContext
 @end
 
 @implementation DataManager
@@ -38,12 +38,12 @@
             //
             //
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:CITY_CHANGED object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:CITY_CHANGED object:nil];// Poslali smo lokaciju da je grad promenjen
         }
     }];
 }
 
-- (NSManagedObjectContext *)manageObjectContext {
+- (NSManagedObjectContext *)managedObjectContext {
     if (!_manageObjectContext) {
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         _manageObjectContext = appDelegate.managedObjectContext;
@@ -70,15 +70,15 @@
                       withFilter:(NSString *) filter
                      withSortAsc:(BOOL)sortAscending
                           forKey:(NSString *) sortKey {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];//zahtev za fetchovanj podataka
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:
-                                              entityName inManagedObjectContext:self.manageObjectContext];
+                                              entityName inManagedObjectContext:self.manageObjectContext];// prva stvar koju radimo
     [fetchRequest setEntity:entityDescription];
     
     //Sorting
     if (sortKey !=nil) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:sortAscending];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];//pravimo niz od sort deskriptora
         //NSArray *sortDescriptors = @[sortDescriptor];
         [fetchRequest setSortDescriptors:sortDescriptors];
     }
@@ -86,12 +86,12 @@
     //Filtering
     
     if (filter != nil ) {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:filter];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:filter];//Definisali smo NSPredicate kao where in sql
         [fetchRequest setPredicate:predicate];
     }
     
     NSError *error;
-    NSMutableArray *resultsArray = [[self.manageObjectContext executeFetchRequest:fetchRequest error:&error]mutableCopy];
+    NSMutableArray *resultsArray = [[self.manageObjectContext executeFetchRequest:fetchRequest error:&error]mutableCopy];//&error bocni efekat
     
     //NSArray *array = [self.manageObjectContext executeFetchRequest:fetchRequest error:&error];
     //NSMutableArray *resultsArray = [NSMutableArray arrayWithArray:array];
@@ -102,29 +102,65 @@
 }
 
 - (void) deleteObjectInDatabase:(NSManagedObject *) object {
-
+    [self.manageObjectContext deleteObject:object];
+    [self saveToDatabase];
     
 }
 
 - (void) updateObjectInDatabase:(NSManagedObject *) object {
-
+    NSError *error = nil;
+    if ([object.managedObjectContext hasChanges] && ![object.managedObjectContext save:&error]) {
+        NSLog(@"Error updating to database: %@, %@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
     
 }
 
 - (void) logObjectInDatabase:(NSManagedObject *) object {
+    NSEntityDescription *description = [object entity];
+    NSDictionary *attributes = [description attributesByName];
+    
+    for (NSString *attribute in attributes) {
+        NSLog(@"%@ = %@,",attribute, [object valueForKey:attribute]);
+    }
 
     
 }
 
 - (CGFloat) numberOfTasksPerTaskGroup:(TaskGroup) group{
+    NSArray *tasksArray = [self fetchEntity:NSStringFromClass([Task class])
+                                withFilter:[NSString stringWithFormat:@"group = %ld", group]
+                               withSortAsc:NO
+                                    forKey:nil];
 
-    return 0.0;
+    return tasksArray.count;
 }
 
 - (void) saveTaskWithTitle:(NSString *)title
                description:(NSString *)description
                      group:(NSInteger)group {
 
+    Task *task = (Task *)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Task class]) inManagedObjectContext:self.managedObjectContext];
+    task.heading = title;
+    task.desc = description;
+    if (self.userlocation) {
+        task.latitude = [NSNumber numberWithFloat:self.userlocation.coordinate.latitude];
+        task.longitude = [NSNumber numberWithFloat:self.userlocation.coordinate.longitude];
+    }
+    task.date = [NSDate date];
+    task.group = [NSNumber numberWithInteger:group];
+    
+    [self saveToDatabase];
+}
+
+#pragma mark - Private API
+
+- (void) saveToDatabase {
+    NSError *error = nil;
+    if ([self.manageObjectContext hasChanges] &&![self.manageObjectContext save:&error]) {
+            NSLog(@"Error saving to database: %@, %@", [error localizedDescription], [error userInfo]);
+            abort();
+    }
 }
 
 @end

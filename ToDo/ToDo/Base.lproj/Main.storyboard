@@ -491,7 +491,7 @@
                                 </connections>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1KL-oQ-8XD">
-                                <rect key="frame" x="20" y="417" width="64" height="64"/>
+                                <rect key="frame" x="20" y="464" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="close"/>
                                 <connections>

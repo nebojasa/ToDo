@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *desc;
 @property (nullable, nonatomic, retain) NSNumber *group;
 @property (nullable, nonatomic, retain) NSString *heading;
-@property (nullable, nonatomic, retain) NSNumber *latitude;
+@property (nullable, nonatomic, retain) NSNumber *latitude;//Vraper klasa kako od primitovnog tipa napraviti objektni
 @property (nullable, nonatomic, retain) NSNumber *longitude;
 
 @end

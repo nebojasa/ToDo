@@ -115,9 +115,9 @@
 //        [self performSegueWithIdentifier:@"Statistics" sender:self];
 //    });
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//    [self performSegueWithIdentifier:@"Websegue" sender:self];
-//    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self performSegueWithIdentifier:@"Websegue" sender:self];
+    });
     
 
 }
@@ -125,9 +125,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-      if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTROUGH_PRESENTED]) {
-          [self performSegueWithIdentifier:@"WalkThrough" sender:self];
-    }
+//      if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTROUGH_PRESENTED]) {
+//          [self performSegueWithIdentifier:@"WalkThrough" sender:self];
+//    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

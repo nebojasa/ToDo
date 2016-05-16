@@ -28,6 +28,22 @@
 #pragma mark - Private API
 
 - (void)animateCloseButton{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.closeButton.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+        UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.closeButton]];
+        [self.animator addBehavior:gravityBehavior];
+        
+        UICollisionBehavior *collisionBahavior = [[UICollisionBehavior alloc] initWithItems:@[self.closeButton]];
+        collisionBahavior.translatesReferenceBoundsIntoBoundary = YES;
+        [self.animator addBehavior:collisionBahavior];
+        
+        UIDynamicItemBehavior *elasticityBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self.closeButton]];
+        elasticityBehavior.elasticity = 0.5;
+        [self.animator addBehavior:elasticityBehavior];
+    }];
+
 }
 
 
@@ -39,15 +55,32 @@
     
   }
 
-- (void) veiwDidAppear:(BOOL) animated {
+- (void) viewDidAppear:(BOOL) animated {
     [super viewDidAppear:animated];
     
-   //[self closeButtonTapped.animated];
+   [self animateCloseButton];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UIWebViewDelegate
+
+
+- (void) webViewDidStartLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible =YES;
+}
+
+-  (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 @end
