@@ -51,6 +51,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   //self.urlString = @"https://www.google.rs/"; cisto za proveru
+    if (self.urlString) {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlString]]];
+    }
     self.closeButton.alpha = ZERO_VALUE;
     
   }

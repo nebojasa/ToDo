@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewController : UIViewController
-
+@property (copy, nonatomic) NSString *urlString;//Moze i strong naravno, najcesce se za string stavlja copy
 @end

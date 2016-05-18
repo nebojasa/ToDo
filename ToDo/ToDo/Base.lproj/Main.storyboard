@@ -374,12 +374,18 @@
                                     <outlet property="delegate" destination="Yzp-nR-fIR" id="Wnv-71-1mX"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" id="lgg-iO-qcd" customClass="MenuView">
+                                <rect key="frame" x="205" y="437" width="170" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oQF-7n-eHd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="menuView" destination="lgg-iO-qcd" id="enZ-ak-FnE"/>
                         <outlet property="profileImageView" destination="gZc-38-Kbx" id="XSI-jy-MyF"/>
                         <segue destination="8j0-3Z-UhM" kind="push" identifier="WalkThrough" id="BeY-cT-aCc"/>
                         <segue destination="oUd-Tz-lIx" kind="push" identifier="Statistics" id="52B-aj-jcy"/>

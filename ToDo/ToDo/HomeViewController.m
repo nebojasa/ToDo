@@ -9,10 +9,11 @@
 #import "HomeViewController.h"
 #import "TaskTableViewCell.h"
 #import "Constanc.h"
+#import "MenuView.h"
 
-@interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
-
+@property (weak, nonatomic) IBOutlet MenuView *menuView;
 @end
 
 @implementation HomeViewController
@@ -115,9 +116,9 @@
 //        [self performSegueWithIdentifier:@"Statistics" sender:self];
 //    });
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [self performSegueWithIdentifier:@"Websegue" sender:self];
-    });
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //[self performSegueWithIdentifier:@"Websegue" sender:self];
+   // });
     
 
 }
@@ -171,5 +172,10 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - MenuViewDelegate
+
+- (void) menuViewOptionTapped:(MenuOption)option {
+    
+}
 
 @end
