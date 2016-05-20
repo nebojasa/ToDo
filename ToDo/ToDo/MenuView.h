@@ -21,5 +21,5 @@ typedef NS_ENUM(NSInteger, MenuOption) {//definisanje tagova za buttone na xibvi
 @end
 
 @interface MenuView : UIView
-@property (weak,nonatomic) id<MenuViewDelegate> delegate;
+@property (weak,nonatomic)IBOutlet id<MenuViewDelegate> delegate;
 @end

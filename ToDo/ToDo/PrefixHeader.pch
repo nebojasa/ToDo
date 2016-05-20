@@ -12,5 +12,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "Constanc.h"
+#import "UIViewController+Utilities.h"
 
 #endif

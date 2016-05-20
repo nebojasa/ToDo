@@ -108,17 +108,18 @@
     tap.numberOfTapsRequired = 1;
     [self.profileImageView addGestureRecognizer:tap];
     
-    
+    self.menuView.delegate = self;
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
 
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self performSegueWithIdentifier:@"Statistics" sender:self];
-//    });
+//       [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:self];
+//   });
     
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //[self performSegueWithIdentifier:@"Websegue" sender:self];
-   // });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//    [self performSegueWithIdentifier:@"Websegue" sender:self];
+//        [self presentErrorWithTitle:@"Internet" andError:@"Nemate internet konekciju"];
+//    });
     
 
 }
@@ -175,7 +176,22 @@
 #pragma mark - MenuViewDelegate
 
 - (void) menuViewOptionTapped:(MenuOption)option {
-    
+    switch (option) {
+        case TASK_DETAILS_MENU_OPTION:
+            [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+            break;
+        case STATISTICS_MENU_OPTION:
+            [self performSegueWithIdentifier:@"StatisticsSegue" sender:nil];
+            break;
+        case WALKTHROUGH_MENU_OPTION:
+            [self performSegueWithIdentifier:@"WalkThrough" sender:nil];
+            break;
+        case ABOUT_MENU_OPTION:
+            [self performSegueWithIdentifier:@"WalkThrough" sender:nil];
+            break;
+        default:
+            break;
+    }
 }
 
 @end
