@@ -108,7 +108,7 @@
     tap.numberOfTapsRequired = 1;
     [self.profileImageView addGestureRecognizer:tap];
     
-    self.menuView.delegate = self;
+    self.menuView.delegate = self;//delekat za menu view je homeviewcontroller
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
 

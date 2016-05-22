@@ -17,7 +17,7 @@
     return YES;
 }
 
-
+// Upotrebom metode saveContext omogucavamo da se podaci kojima smo manipulisali budu sacuvani pre pucanja aplikacije
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
 }
@@ -29,10 +29,12 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "rs.cubes.ToDo" in the application's documents directory.
+
+// The directory the application uses to store the Core Data store file. This code uses a directory named "rs.cubes.ToDo" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
-    //Glavna klasa sto se tice baza podataka
+
+//Glavna klasa sto se tice baza podataka
 - (NSManagedObjectModel *)managedObjectModel {
     // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
     if (_managedObjectModel != nil) {
@@ -42,7 +44,8 @@
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
-    //NSPersisttnentStoreCoordinator radi sa razlicitim tipovima podataka i smesta ih u bazu(MySQL,SQL Server)
+
+    //NSPersisttnentStoreCoordinator radi sa razlicitim tipovima podataka i smesta ih u bazu(MySQL,SQL Server), u zavisnosti od baze podataka koju koristimo,
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
@@ -63,7 +66,7 @@
     return _persistentStoreCoordinator;
 }
 
-
+//
 - (NSManagedObjectContext *)managedObjectContext {
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
@@ -80,7 +83,7 @@
 
 #pragma mark - Core Data Saving support
 
-//Metoda koja sacuva podatke u aplikaciji!
+//Metoda koja sacuva podatke u aplikaciji ili izbacuje gresku!
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {

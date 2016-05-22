@@ -11,9 +11,9 @@
 #import "DataManager.h"
 #import <MapKit/MapKit.h>
 
-#define kRegionRadius 50000
+#define kRegionRadius 50000 //koliko zelim da zumiram mapu koliki radius
 
-@interface TaskDetailsViewController ()<UITextFieldDelegate>
+@interface TaskDetailsViewController() <UITextFieldDelegate>
 
 @property(weak,nonatomic)IBOutlet UITextField *titleTextField;
 @property(weak,nonatomic)IBOutlet UITextField *descriptonTextField;
@@ -25,7 +25,7 @@
 @property(weak,nonatomic)IBOutlet UIView *completedView;
 @property(weak,nonatomic)IBOutlet UIView *notCompletedView;
 @property(weak,nonatomic)IBOutlet UIView *inProgressView;
-@property(nonatomic)NSInteger group;
+@property(nonatomic)NSInteger group;//klikom na odgovarajuci button uradi animaciju selektorom
 @end
 
 @implementation TaskDetailsViewController
@@ -35,7 +35,7 @@
 -  (void)setGroup:(NSInteger)group {
     _group = group;
     
-    __block CGPoint point;
+    __block CGPoint point;//definishem point
     
     switch (group) {
         case COMPLETED_TASK_GROUP:
@@ -52,7 +52,7 @@
     }
     
     [UIView animateWithDuration:0.4 animations:^{
-        self.groupSelectorImageView.center = point;
+        self.groupSelectorImageView.center = point;//animiram centar grup selektora da se poklopi sa centrom pointa
     }];
 }
 

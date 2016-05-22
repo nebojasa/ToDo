@@ -14,8 +14,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Task (CoreDataProperties)
-    //svojstva koja se nalaze u bazi
-@property (nullable, nonatomic, retain) NSDate *date;
+    //svojstva koja se nalaze u bazi, posto baza ne moze da radi sa primitivnim tipovima podataka kodistimo wrappere
+@property (nullable, nonatomic, retain) NSDate *date;//retain zaostavstina od ranije moze da bu strong
 @property (nullable, nonatomic, retain) NSString *desc;
 @property (nullable, nonatomic, retain) NSNumber *group;
 @property (nullable, nonatomic, retain) NSString *heading;

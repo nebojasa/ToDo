@@ -34,7 +34,7 @@ static NSString *const EMPTY_STRING         =@"";
 //User defaults
 static NSString *const USER_IMAGE   =@"USER_IMAGE";
 static NSString *const WALKTROUGH_PRESENTED   =@"WalkThrough";
-typedef NS_ENUM(NSInteger, TaskGroup) {
+typedef NS_ENUM (NSInteger, TaskGroup) {
     COMPLETED_TASK_GROUP = 1,
     NOT_COMPLETED_TASK_GROUP,
     IN_PROGRESS_TASK_GROUP,
