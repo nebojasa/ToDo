@@ -19,6 +19,7 @@
 		F404902B1CE35B5500A68732 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404902A1CE35B5500A68732 /* CoreData.framework */; };
 		F40810381CEC880D0072E7FE /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F40810371CEC880D0072E7FE /* MenuView.m */; };
 		F408103A1CEC88540072E7FE /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40810391CEC88540072E7FE /* MenuView.xib */; };
+		F4131A4C1CF33D41008040DB /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F4131A4B1CF33D41008040DB /* Helpers.m */; };
 		F440DBAD1CAC061400E335BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAC1CAC061400E335BF /* LoginViewController.m */; };
 		F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAF1CAC08D500E335BF /* SignupViewController.m */; };
 		F44C771E1CA9677F0077F1D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C771D1CA9677F0077F1D3 /* main.m */; };
@@ -57,6 +58,8 @@
 		F40810361CEC880D0072E7FE /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		F40810371CEC880D0072E7FE /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		F40810391CEC88540072E7FE /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		F4131A4A1CF33D41008040DB /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		F4131A4B1CF33D41008040DB /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		F440DBAB1CAC061400E335BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F440DBAC1CAC061400E335BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F440DBAE1CAC08D500E335BF /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				52B3AF3B1CCE3F8800529B95 /* WalktroughCollectionViewCell.m */,
 				529C92381CCA1C4E009C8936 /* Constanc.h */,
 				52B3AF401CCE48E200529B95 /* WalkthroughItem.h */,
+				F4131A4A1CF33D41008040DB /* Helpers.h */,
+				F4131A4B1CF33D41008040DB /* Helpers.m */,
 				52B3AF411CCE48E200529B95 /* WalkthroughItem.m */,
 				F440DBAE1CAC08D500E335BF /* SignupViewController.h */,
 				F4F6B8E81CDA27B40000FB28 /* StatisticsViewController.h */,
@@ -303,6 +308,7 @@
 				F4F6B8EA1CDA27B40000FB28 /* StatisticsViewController.m in Sources */,
 				F40810381CEC880D0072E7FE /* MenuView.m in Sources */,
 				F44C771E1CA9677F0077F1D3 /* main.m in Sources */,
+				F4131A4C1CF33D41008040DB /* Helpers.m in Sources */,
 				529C92371CCA1BAF009C8936 /* TaskTableViewCell.m in Sources */,
 				F4D1F46C1CEF3F5D00B28D04 /* UIViewController+Utilities.m in Sources */,
 				F4D1F4691CEF2B5900B28D04 /* TaskDetailsViewController.m in Sources */,

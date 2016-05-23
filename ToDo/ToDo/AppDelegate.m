@@ -7,19 +7,48 @@
 //
 
 #import "AppDelegate.h"
+#import "DataManager.h"
+#import <CoreLocation/CoreLocation.h>
 
+@interface AppDelegate() <CLLocationManagerDelegate>
 
+@property(strong,nonatomic) CLLocationManager *locationManager;
+@end
 
 @implementation AppDelegate
 
+#pragma mark - Private API
+
+-(void) configureLocationManager {
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startMonitoringSignificantLocationChanges];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self configureLocationManager];
     return YES;
 }
+
+#pragma mark - UIApplicationDelegate
 
 // Upotrebom metode saveContext omogucavamo da se podaci kojima smo manipulisali budu sacuvani pre pucanja aplikacije
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    if (locations.count > 0) {
+        [DataManager sharedInstance].userlocation = [locations firstObject];
+    }
+}
+
+- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Location manager error: %@", [error localizedDescription]);
 }
 
 #pragma mark - Core Data stack

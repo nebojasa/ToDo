@@ -58,7 +58,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)backButtonTapped {
+- (IBAction) backButtonTapped {
     if ([self isEdited] && !self.task) {
         [self configureAlert];
     } else {
@@ -81,18 +81,32 @@
 - (IBAction) groupButtonTapped: (UIButton *)sender {
     self.group = sender.tag;
 }
+
 #pragma mark - Private API
 
 - (BOOL) isEdited {
-    
+    if (self.titleTextField.text>0) {
+        return YES;
+    }
     return NO;
 }
 
-- (void)configureAlert {
+- (void) configureAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Save Task" message:@"Are you shure you want to go back without saving?" preferredStyle:UIAlertControllerStyleAlert];
     
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle: @"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle: @"No" style:UIAlertActionStyleCancel handler:NULL];
+    
+    [alertController addAction:yesAction];
+    [alertController addAction:noAction];
+    
+    [self presentViewController:alertController animated:YES completion:NULL];
 }
 
-- (void)configureTextFieldPlaceholders {
+- (void) configureTextFieldPlaceholders {
     NSMutableDictionary *titleAttributes = [[NSMutableDictionary alloc] init];
     [titleAttributes setObject:[UIFont fontWithName:@"Avenir-Light" size:35.0] forKey:NSFontAttributeName];
     [titleAttributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
@@ -128,16 +142,116 @@
     [self backButtonTapped];
 }
 
+- (void) registerForNotification {
+    [[NSNotificationCenter defaultCenter] addObserverForName:CITY_CHANGED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        self.cityLabel.text = [DataManager sharedInstance].userLocality;
+    }];
+}
+
+- (void) configureMap {
+    //sakrijem mapu
+    self.mapView.alpha = ZERO_VALUE;
+    CLLocationCoordinate2D coordinate;
+    
+    //ako imam task, taj task dodajem na mapu
+    if (self.task) {
+        [self.mapView addAnnotation:self.task];
+        
+        coordinate = self.task.coordinate;
+    } else {
+        self.mapView.showsUserLocation = YES;
+        coordinate = [DataManager sharedInstance].userlocation.coordinate;
+    }
+    [self zoomMapTocoordinate:coordinate];
+    
+    if ([DataManager sharedInstance].userLocality.length > 0) {
+        self.cityLabel.text = [DataManager sharedInstance].userLocality;
+    }
+}
+
+- (void) zoomMapTocoordinate:(CLLocationCoordinate2D) coordinate {
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kRegionRadius * 2.0, kRegionRadius * 2.0);
+    MKCoordinateRegion coordinateRegion = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:coordinateRegion animated:YES];
+}
+
+- (void) fillData {
+    self.titleTextField.text = self.task.heading;
+    self.descriptonTextField.text = self.task.desc;
+    self.group = [self.task.group integerValue];
+    [self.mapView addAnnotation:self.task];
+}
+
 
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self configureTextFieldPlaceholders];
+    [self registerForNotification];
+    [self configureMap];
+    
+    self.addButton.alpha = ZERO_VALUE;
+    
+    if (self.task) {
+        [self fillData];
+    } else {
+        self.group = NOT_COMPLETED_TASK_GROUP;
+    }
+}
+
+//- (UIStatusBarStyle) preferredStatusBarStyle {
+//    
+//}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.addButton.alpha = 1.0;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+
+
+# pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

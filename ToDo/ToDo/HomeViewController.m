@@ -7,16 +7,37 @@
 //
 
 #import "HomeViewController.h"
+#import "WalkTroughViewController.h"
+#import "WebViewController.h"
+#import "TaskDetailsViewController.h"
+#import "DataManager.h"
+#import "Task.h"
 #import "TaskTableViewCell.h"
 #import "Constanc.h"
 #import "MenuView.h"
+#import "Helpers.h"
 
 @interface HomeViewController() <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet MenuView *menuView;
+@property (weak,nonatomic) IBOutlet UITableView *tableView;
+@property (weak,nonatomic) IBOutlet UIImageView *badgeImageView;
+@property (weak,nonatomic) IBOutlet UILabel *badgeLabel;
+@property (weak,nonatomic) IBOutlet UILabel *welcomeLabel;
+@property (strong,nonatomic) NSMutableArray *itemsArray;
 @end
 
 @implementation HomeViewController
+
+#pragma mark - Properties
+
+- (NSMutableArray *) itemsArray {
+    _itemsArray = [[DataManager sharedInstance] fetchEntity: NSStringFromClass([Task class]) 
+                                                 withFilter:nil 
+                                                withSortAsc:YES 
+                                                     forKey: @"date"];
+    return _itemsArray;
+}
 
 #pragma mark - UITableViewDelegate
 
@@ -31,7 +52,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.itemsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,7 +83,7 @@
     return cell;
 }
 
-- (void)pickImage {
+- (void) pickImage {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose source:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -109,8 +130,7 @@
     [self.profileImageView addGestureRecognizer:tap];
     
     self.menuView.delegate = self;//delekat za menu view je homeviewcontroller
-    self.profileImageView.clipsToBounds = YES;
-    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+    [self configureProfileImage];
 
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //       [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:self];
@@ -138,12 +158,28 @@
 
 #pragma mark - Private API
 
-- (void)configureProfileImage {
+- (void) configureProfileImage {
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
         NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE];
         
         self.profileImageView.image = [UIImage imageWithData:data];
+    }
+}
+
+- (void) configureBadge {
+    self.badgeImageView.alpha = (self.itemsArray.count ==0) ? ZERO_VALUE : 1.0;
+    self.badgeLabel.alpha = (self.itemsArray.count ==0) ? ZERO_VALUE : 1.0;
+    self.badgeLabel.text = [NSString stringWithFormat:@"%ld", self.itemsArray.count];
+}
+
+- (void) configureWelcomeLabel {
+    if ([Helpers isMorning]) {
+        self.welcomeLabel.text = @"Good Morning!";
+    } else {
+        self.welcomeLabel.text = @"Good Afternoon!";
     }
 }
 
