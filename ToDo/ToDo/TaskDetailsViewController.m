@@ -201,9 +201,9 @@
     }
 }
 
-//- (UIStatusBarStyle) preferredStatusBarStyle {
-//    
-//}
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -217,13 +217,10 @@
     [super didReceiveMemoryWarning];
 }
 
-
-
 # pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    
     return YES;
 }
 
@@ -234,24 +231,5 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

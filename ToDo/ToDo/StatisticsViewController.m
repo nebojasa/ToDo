@@ -16,16 +16,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *notCompletedCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *inProgressCountLabel;
 - (IBAction)backButtonTapped:(id)sender;
-
 @end
 
 @implementation StatisticsViewController
 
 #pragma mark - Actions
+
 - (IBAction)backButtonTapped:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +34,5 @@
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
-
 
 @end

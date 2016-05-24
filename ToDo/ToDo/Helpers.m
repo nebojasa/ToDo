@@ -26,8 +26,6 @@
         case IN_PROGRESS_TASK_GROUP:
             color = kPurpleColor;
             break;
-        default:
-            break;
     }
     return color;
 }

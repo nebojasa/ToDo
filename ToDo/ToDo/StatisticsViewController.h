@@ -10,5 +10,4 @@
 
 
 @interface StatisticsViewController : UIViewController
-
 @end

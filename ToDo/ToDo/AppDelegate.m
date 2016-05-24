@@ -26,7 +26,6 @@
     [self.locationManager startMonitoringSignificantLocationChanges];
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureLocationManager];
     return YES;
@@ -34,10 +33,9 @@
 
 #pragma mark - UIApplicationDelegate
 
-// Upotrebom metode saveContext omogucavamo da se podaci kojima smo manipulisali budu sacuvani pre pucanja aplikacije
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
-}
+}// Upotrebom metode saveContext omogucavamo da se podaci kojima smo manipulisali budu sacuvani pre pucanja aplikacije
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -58,12 +56,9 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-
-// The directory the application uses to store the Core Data store file. This code uses a directory named "rs.cubes.ToDo" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-//Glavna klasa sto se tice baza podataka
 - (NSManagedObjectModel *)managedObjectModel {
     // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
     if (_managedObjectModel != nil) {
@@ -72,9 +67,8 @@
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ToDo" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
-}
+}//Glavna klasa sto se tice baza podataka
 
-    //NSPersisttnentStoreCoordinator radi sa razlicitim tipovima podataka i smesta ih u bazu(MySQL,SQL Server), u zavisnosti od baze podataka koju koristimo,
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
@@ -93,10 +87,9 @@
         abort();
     }
     return _persistentStoreCoordinator;
-}
+}//NSPersisttnentStoreCoordinator radi sa razlicitim tipovima podataka i smesta ih u bazu(MySQL,SQL Server), u zavisnosti od baze podataka koju koristimo,
 
-//
-- (NSManagedObjectContext *)managedObjectContext {
+- (NSManagedObjectContext *) managedObjectContext {
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
@@ -112,7 +105,6 @@
 
 #pragma mark - Core Data Saving support
 
-//Metoda koja sacuva podatke u aplikaciji ili izbacuje gresku!
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
@@ -122,6 +114,6 @@
             abort();
         }
     }
-}
+}//Metoda koja sacuva podatke u aplikaciji ili izbacuje gresku!
 
 @end

@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Task : NSManagedObject<MKAnnotation>
+@interface Task : NSManagedObject <MKAnnotation>
 
 - (BOOL) isLocationValid;
 

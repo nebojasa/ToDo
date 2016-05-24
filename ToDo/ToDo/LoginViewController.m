@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "DataManager.h"
 
 #define kConstant 50.0
 #define ZERO_VALUE 0.0

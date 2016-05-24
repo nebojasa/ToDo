@@ -128,10 +128,11 @@
     self.profileImageView.userInteractionEnabled = YES;
     tap.numberOfTapsRequired = 1;
     [self.profileImageView addGestureRecognizer:tap];
-    
-    self.menuView.delegate = self;//delekat za menu view je homeviewcontroller
     [self configureProfileImage];
-
+    //[self configureBadge];
+    //[self configureWelcomeLabel];
+    self.menuView.delegate = self;//delekat za menu view je homeviewcontroller
+    
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //       [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:self];
 //   });
@@ -187,7 +188,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    [picker dismissViewControllerAnimated:YES completion:nil];//bilo NULL?
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
