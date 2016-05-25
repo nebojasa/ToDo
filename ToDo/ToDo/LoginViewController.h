@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
+@property (weak, nonatomic) IBOutlet UIView *logoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinerView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 
+-(void)configureTextFieldPlaceholders;
+//-(void)registerForNotification;
+//-(void)prepareForAnimations;
+-(void)animate;
+-(IBAction)submitButtonTapped;
 @end

@@ -12,24 +12,15 @@
 #define kConstant 50.0
 #define ZERO_VALUE 0.0
 
-@interface LoginViewController() <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
-@property (weak, nonatomic) IBOutlet UIView *logoView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinerView;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UIView *footerView;
+@interface LoginViewController()
+@property(weak,nonatomic)IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @end
 
 @implementation LoginViewController
 
 #pragma mark - Private API
 
-- (void)configureTextField:(UITextField *)textField {
+-(void)configureTextField:(UITextField *)textField {
     if (textField.placeholder.length > 0) {
         //        UIColor *color = [UIColor colorWithRed:117.0/255.0
         //                                         green:113.0/255.0
@@ -48,24 +39,34 @@
 
 #pragma mark - Actions
 
-- (IBAction)forgotPasswordButtonTapped:(UIButton *)sender {
+-(IBAction)forgotPasswordButtonTapped:(UIButton *)sender {
 }
 
-- (IBAction)signInButtonTapped:(UIButton *)sender {
-    
-    sender.enabled = NO;
-    
-    [self.spinerView startAnimating];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
-    });
-}
-
-- (IBAction)signUpButtonTapped:(UIButton *)sender {
+-(IBAction)signUpButtonTapped:(UIButton *)sender {
     NSLog(@"Sign up...");
 }
 
+-(IBAction)submitButtonTapped {
+    if (self.usernameTextField.text.length ==0 ) {
+        [self presentErrorWithTitle:@"Validation" andError:@"Please enter your username."];
+        return;
+    }
+    if (self.passwordTextField.text.length ==0 ) {
+        [self presentErrorWithTitle:@"Validation" andError:@"Please enter your password."];
+        return;
+    }
+    NSLog(@"Signin in..");
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:LOGGED_IN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.activityIndicatorView startAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.activityIndicatorView stopAnimating];
+        [self performSegueWithIdentifier:@"HomeSegue" sender:self];
+    });
+
+}
 
 #pragma mark - Public API
 
@@ -112,9 +113,22 @@
     
 }
 
+-(void)configureTextFieldPlaceholders {
+    
+    NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
+    [attributes setObject:[UIFont fontWithName:@"Avenir-Light" size:15.0] forKey:NSFontAttributeName];
+    [attributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    
+    NSAttributedString *usernamePlaceholder = [[NSAttributedString alloc] initWithString:self.usernameTextField.placeholder attributes:attributes];
+    self.usernameTextField.attributedPlaceholder = usernamePlaceholder;
+    
+    NSAttributedString *passwordPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:attributes];
+    self.passwordTextField.attributedPlaceholder = passwordPlaceholder;
+}
+
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
     
     [self configureTextField:self.usernameTextField];
@@ -122,13 +136,13 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.spinerView stopAnimating];
     [self prepareForAnimation];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self animate];
@@ -136,14 +150,14 @@
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
     
     return YES;
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
     [UIView animateWithDuration:10.0
                           delay:0.0
          usingSpringWithDamping:0.4
@@ -157,7 +171,7 @@
                      completion:nil];
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+-(void)textFieldDidEndEditing:(UITextField *)textField {
     [UIView animateWithDuration:1.0
                           delay:0.0
          usingSpringWithDamping:0.4

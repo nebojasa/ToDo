@@ -70,7 +70,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <state key="normal" title="Sign in"/>
                                 <connections>
-                                    <action selector="signInButtonTapped:" destination="gwl-Xb-VvW" eventType="touchUpInside" id="BdO-qg-IQH"/>
+                                    <action selector="submitButtonTapped" destination="gwl-Xb-VvW" eventType="touchUpInside" id="rfe-gw-e5j"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="SlL-Ya-1Eh">
