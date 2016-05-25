@@ -2,7 +2,7 @@
 //  Task.h
 //  ToDo
 //
-//  Created by Cubes School 10 on 5/11/16.
+//  Created by Cubes School 10 on 5/25/16.
 //  Copyright © 2016 Cubes School 10. All rights reserved.
 //
 
@@ -10,12 +10,11 @@
 #import <CoreData/CoreData.h>
 #import <MapKit/MapKit.h>
 
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Task : NSManagedObject <MKAnnotation>
 
-- (BOOL) isLocationValid;
+- (BOOL)isLocationValid;
 
 @end
 

@@ -14,7 +14,7 @@
 @property(weak,nonatomic) IBOutlet UIWebView *webView;
 @property(weak,nonatomic) IBOutlet UIButton *closeButton;
 @property(strong,nonatomic) UIDynamicAnimator *animator;
--(IBAction)closeButtonTapped:(id)sender;
+- (IBAction)closeButtonTapped:(id)sender;
 
 @end
 
@@ -22,7 +22,7 @@
 
 #pragma mark - Actions
 
--(IBAction)closeButtonTapped:(id)sender{
+- (IBAction)closeButtonTapped:(id)sender{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 #pragma mark - Private API
@@ -59,7 +59,7 @@
     
   }
 
-- (void) viewDidAppear:(BOOL) animated {
+- (void)viewDidAppear:(BOOL) animated {
     [super viewDidAppear:animated];
     
    [self animateCloseButton];
@@ -79,11 +79,11 @@
 #pragma mark - UIWebViewDelegate
 
 
-- (void) webViewDidStartLoad:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible =YES;
 }
 
--  (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

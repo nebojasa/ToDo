@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, MenuOption) {//definisanje tagova za buttone na xibvi
 @protocol MenuViewDelegate <NSObject>
 @required
 - (void)menuViewOptionTapped:(MenuOption) option;
+- (void) menuViewDidOpened;
+- (void) menuViewDidClosed;
 @end
 
 @interface MenuView : UIView

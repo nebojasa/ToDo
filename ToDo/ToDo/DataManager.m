@@ -44,11 +44,10 @@
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
-    if (!_manageObjectContext) {
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        _manageObjectContext = appDelegate.managedObjectContext;
-    }
-    return _manageObjectContext;
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    _manageObjectContext = appDelegate.managedObjectContext;
+    
+    return appDelegate.managedObjectContext;
 }
 
 
@@ -71,8 +70,8 @@
                      withSortAsc:(BOOL)sortAscending
                           forKey:(NSString *) sortKey {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];//zahtev za fetchovanj podataka
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:
-                                              entityName inManagedObjectContext:self.manageObjectContext];// prva stvar koju radimo
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName
+                                                         inManagedObjectContext:self.manageObjectContext];// prva stvar koju radimo
     [fetchRequest setEntity:entityDescription];
     
     //Sorting

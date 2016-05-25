@@ -58,7 +58,7 @@
 
 #pragma mark - Actions
 
-- (IBAction) backButtonTapped {
+- (IBAction)backButtonTapped {
     if ([self isEdited] && !self.task) {
         [self configureAlert];
     } else {
@@ -66,11 +66,11 @@
     }
 }
 
-- (IBAction) addButtonTapped {
+- (IBAction)addButtonTapped {
     [self saveTask];
 }
 
-- (IBAction) mapButtonTapped:(UIButton *)sender {
+- (IBAction)mapButtonTapped:(UIButton *)sender {
     sender.selected = !sender.selected;
     
     [UIView animateWithDuration:0.3 animations:^{
@@ -78,20 +78,20 @@
     }];
 }
 
-- (IBAction) groupButtonTapped: (UIButton *)sender {
+- (IBAction)groupButtonTapped: (UIButton *)sender {
     self.group = sender.tag;
 }
 
 #pragma mark - Private API
 
-- (BOOL) isEdited {
+- (BOOL)isEdited {
     if (self.titleTextField.text>0) {
         return YES;
     }
     return NO;
 }
 
-- (void) configureAlert {
+- (void)configureAlert {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Save Task" message:@"Are you shure you want to go back without saving?" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *yesAction = [UIAlertAction actionWithTitle: @"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
@@ -106,7 +106,7 @@
     [self presentViewController:alertController animated:YES completion:NULL];
 }
 
-- (void) configureTextFieldPlaceholders {
+- (void)configureTextFieldPlaceholders {
     NSMutableDictionary *titleAttributes = [[NSMutableDictionary alloc] init];
     [titleAttributes setObject:[UIFont fontWithName:@"Avenir-Light" size:35.0] forKey:NSFontAttributeName];
     [titleAttributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
@@ -122,7 +122,7 @@
     self.descriptonTextField.attributedPlaceholder = descriptionPlaceholder;
 }
 
-- (void) saveTask {
+- (void)saveTask {
     if (self.titleTextField.text.length == 0) {
         [self presentErrorWithTitle:@"Validation" andError:@"Please add title."];
         return;
@@ -142,13 +142,13 @@
     [self backButtonTapped];
 }
 
-- (void) registerForNotification {
-    [[NSNotificationCenter defaultCenter] addObserverForName:CITY_CHANGED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+- (void)registerForNotification {
+    [[NSNotificationCenter defaultCenter] addObserverForName:CITY_CHANGED object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         self.cityLabel.text = [DataManager sharedInstance].userLocality;
     }];
 }
 
-- (void) configureMap {
+- (void)configureMap {
     //sakrijem mapu
     self.mapView.alpha = ZERO_VALUE;
     CLLocationCoordinate2D coordinate;
@@ -169,13 +169,13 @@
     }
 }
 
-- (void) zoomMapTocoordinate:(CLLocationCoordinate2D) coordinate {
+- (void)zoomMapTocoordinate:(CLLocationCoordinate2D) coordinate {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kRegionRadius * 2.0, kRegionRadius * 2.0);
     MKCoordinateRegion coordinateRegion = [self.mapView regionThatFits:region];
     [self.mapView setRegion:coordinateRegion animated:YES];
 }
 
-- (void) fillData {
+- (void)fillData {
     self.titleTextField.text = self.task.heading;
     self.descriptonTextField.text = self.task.desc;
     self.group = [self.task.group integerValue];
@@ -201,11 +201,11 @@
     }
 }
 
-- (UIStatusBarStyle) preferredStatusBarStyle {
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [UIView animateWithDuration:0.5 animations:^{

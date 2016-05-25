@@ -35,6 +35,7 @@ static NSString *const LOGGED_IN         =@"Yes";
 //User defaults
 static NSString *const USER_IMAGE   =@"USER_IMAGE";
 static NSString *const WALKTROUGH_PRESENTED   =@"WalkThrough";
+static NSString *const CUBES_URL = @"http://www.cubes.rs";
 typedef NS_ENUM (NSInteger, TaskGroup) {
     COMPLETED_TASK_GROUP = 1,
     NOT_COMPLETED_TASK_GROUP,

@@ -12,14 +12,14 @@
 		529C92371CCA1BAF009C8936 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C92361CCA1BAF009C8936 /* TaskTableViewCell.m */; };
 		52B3AF3C1CCE3F8800529B95 /* WalktroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3AF3B1CCE3F8800529B95 /* WalktroughCollectionViewCell.m */; };
 		52B3AF421CCE48E200529B95 /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B3AF411CCE48E200529B95 /* WalkthroughItem.m */; };
-		F40490221CE3575600A68732 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F404901F1CE3575600A68732 /* Task+CoreDataProperties.m */; };
-		F40490231CE3575600A68732 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = F40490211CE3575600A68732 /* Task.m */; };
 		F40490271CE35A7000A68732 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F40490261CE35A7000A68732 /* DataManager.m */; };
 		F40490291CE35B4A00A68732 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40490281CE35B4A00A68732 /* MapKit.framework */; };
 		F404902B1CE35B5500A68732 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404902A1CE35B5500A68732 /* CoreData.framework */; };
 		F40810381CEC880D0072E7FE /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F40810371CEC880D0072E7FE /* MenuView.m */; };
 		F408103A1CEC88540072E7FE /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F40810391CEC88540072E7FE /* MenuView.xib */; };
 		F4131A4C1CF33D41008040DB /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = F4131A4B1CF33D41008040DB /* Helpers.m */; };
+		F42448E01CF5DAB800B65F2F /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F42448DD1CF5DAB800B65F2F /* Task+CoreDataProperties.m */; };
+		F42448E11CF5DAB800B65F2F /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = F42448DF1CF5DAB800B65F2F /* Task.m */; };
 		F440DBAD1CAC061400E335BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAC1CAC061400E335BF /* LoginViewController.m */; };
 		F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F440DBAF1CAC08D500E335BF /* SignupViewController.m */; };
 		F44C771E1CA9677F0077F1D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F44C771D1CA9677F0077F1D3 /* main.m */; };
@@ -47,10 +47,6 @@
 		52B3AF3B1CCE3F8800529B95 /* WalktroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalktroughCollectionViewCell.m; sourceTree = "<group>"; };
 		52B3AF401CCE48E200529B95 /* WalkthroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughItem.h; sourceTree = "<group>"; };
 		52B3AF411CCE48E200529B95 /* WalkthroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughItem.m; sourceTree = "<group>"; };
-		F404901E1CE3575600A68732 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Task+CoreDataProperties.h"; path = "../Task+CoreDataProperties.h"; sourceTree = "<group>"; };
-		F404901F1CE3575600A68732 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Task+CoreDataProperties.m"; path = "../Task+CoreDataProperties.m"; sourceTree = "<group>"; };
-		F40490201CE3575600A68732 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = ../Task.h; sourceTree = "<group>"; };
-		F40490211CE3575600A68732 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Task.m; path = ../Task.m; sourceTree = "<group>"; };
 		F40490251CE35A7000A68732 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		F40490261CE35A7000A68732 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		F40490281CE35B4A00A68732 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -60,6 +56,10 @@
 		F40810391CEC88540072E7FE /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		F4131A4A1CF33D41008040DB /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 		F4131A4B1CF33D41008040DB /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		F42448DC1CF5DAB800B65F2F /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F42448DD1CF5DAB800B65F2F /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F42448DE1CF5DAB800B65F2F /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		F42448DF1CF5DAB800B65F2F /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		F440DBAB1CAC061400E335BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F440DBAC1CAC061400E335BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F440DBAE1CAC08D500E335BF /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
@@ -165,11 +165,11 @@
 		F44C77371CA96BF50077F1D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F42448DC1CF5DAB800B65F2F /* Task+CoreDataProperties.h */,
+				F42448DD1CF5DAB800B65F2F /* Task+CoreDataProperties.m */,
+				F42448DE1CF5DAB800B65F2F /* Task.h */,
+				F42448DF1CF5DAB800B65F2F /* Task.m */,
 				F44C77281CA9677F0077F1D3 /* ToDo.xcdatamodeld */,
-				F404901E1CE3575600A68732 /* Task+CoreDataProperties.h */,
-				F404901F1CE3575600A68732 /* Task+CoreDataProperties.m */,
-				F40490201CE3575600A68732 /* Task.h */,
-				F40490211CE3575600A68732 /* Task.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -301,12 +301,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42448E11CF5DAB800B65F2F /* Task.m in Sources */,
 				F440DBB01CAC08D500E335BF /* SignupViewController.m in Sources */,
 				F44C77241CA9677F0077F1D3 /* ViewController.m in Sources */,
-				F40490221CE3575600A68732 /* Task+CoreDataProperties.m in Sources */,
 				F44C77211CA9677F0077F1D3 /* AppDelegate.m in Sources */,
 				F4F6B8EA1CDA27B40000FB28 /* StatisticsViewController.m in Sources */,
 				F40810381CEC880D0072E7FE /* MenuView.m in Sources */,
+				F42448E01CF5DAB800B65F2F /* Task+CoreDataProperties.m in Sources */,
 				F44C771E1CA9677F0077F1D3 /* main.m in Sources */,
 				F4131A4C1CF33D41008040DB /* Helpers.m in Sources */,
 				529C92371CCA1BAF009C8936 /* TaskTableViewCell.m in Sources */,
@@ -315,7 +316,6 @@
 				F4F6B8EE1CDA2E3D0000FB28 /* WebViewController.m in Sources */,
 				F44C772A1CA9677F0077F1D3 /* ToDo.xcdatamodeld in Sources */,
 				52B3AF3C1CCE3F8800529B95 /* WalktroughCollectionViewCell.m in Sources */,
-				F40490231CE3575600A68732 /* Task.m in Sources */,
 				5239DDCC1CCA52780005F76C /* WalkTroughViewController.m in Sources */,
 				F4DF0AC61CB7ED36008C13AA /* HomeViewController.m in Sources */,
 				F40490271CE35A7000A68732 /* DataManager.m in Sources */,
