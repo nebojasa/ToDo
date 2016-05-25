@@ -93,9 +93,9 @@
     NSError *error;
     NSMutableArray *resultsArray = [[self.manageObjectContext executeFetchRequest:fetchRequest error:&error]mutableCopy];//&error bocni efekat
     
-    //NSArray *array = [self.manageObjectContext executeFetchRequest:fetchRequest error:&error];
-    //NSMutableArray *resultsArray = [NSMutableArray arrayWithArray:array];
-    
+//    NSArray *array = [self.manageObjectContext executeFetchRequest:fetchRequest error:&error];
+//    NSMutableArray *resultsArray = [NSMutableArray arrayWithArray:array];
+//    
     if (resultsArray == nil) NSLog(@"Error fetching %@(s).", entityName);
 
     return resultsArray;
