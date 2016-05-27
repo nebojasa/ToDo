@@ -13,9 +13,9 @@
 #define COLOR(r,g,b,a)              [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
 //Notifications
-
+static NSString *const SHOW_HOME            =@"SHOW_HOME";
 static NSString *const CITY_CHANGED         =@"CITY_CHANGED";
-//static NSString *const CITY_CHANGED         =@"SHOW_LOGIN";
+static NSString *const SHOW_LOGIN         =@"SHOW_LOGIN";
 static NSString *const OK_STRING         =@"OK";
 static NSString *const EMPTY_STRING         =@"";
 static NSString *const LOGGED_IN         =@"Yes";

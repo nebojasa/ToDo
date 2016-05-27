@@ -21,31 +21,44 @@
                                 <rect key="frame" x="30" y="377" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" id="nBo-eY-HAf">
-                                <rect key="frame" x="30" y="424" width="19" height="19"/>
+                            <view contentMode="scaleToFill" id="ezZ-9F-iFG">
+                                <rect key="frame" x="0.0" y="367" width="376" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username" id="ujB-dY-7SV">
-                                <rect key="frame" x="30" y="378" width="22" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="14" id="Ecq-Wq-XQt">
-                                <rect key="frame" x="69" y="377" width="286" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <view contentMode="scaleToFill" restorationIdentifier="Separator" id="oN5-oA-UpH">
-                                <rect key="frame" x="0.0" y="410" width="375" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" id="nBo-eY-HAf">
+                                        <rect key="frame" x="30" y="57" width="19" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username" id="ujB-dY-7SV">
+                                        <rect key="frame" x="30" y="11" width="22" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="14" id="Ecq-Wq-XQt">
+                                        <rect key="frame" x="69" y="10" width="286" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gwl-Xb-VvW" id="gsC-77-hpR"/>
+                                        </connections>
+                                    </textField>
+                                    <view contentMode="scaleToFill" restorationIdentifier="Separator" id="oN5-oA-UpH">
+                                        <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="14" id="hQB-Vt-lDY">
+                                        <rect key="frame" x="69" y="52" width="286" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gwl-Xb-VvW" id="RUx-WW-aq1"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="14" id="hQB-Vt-lDY">
-                                <rect key="frame" x="69" y="419" width="286" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g6x-p3-p4t">
                                 <rect key="frame" x="236" y="463" width="119" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,6 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Q6O-b8-f47"/>
                     <connections>
+                        <outlet property="containerView" destination="ezZ-9F-iFG" id="uYM-XV-a0h"/>
                         <outlet property="footerView" destination="SlL-Ya-1Eh" id="cuj-XT-3dk"/>
                         <outlet property="logoView" destination="7As-Yq-TKI" id="Vab-zG-yfG"/>
                         <outlet property="maskLogoView" destination="7As-Yq-TKI" id="Ugq-g5-POl"/>
@@ -177,18 +191,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YrQ-M3-4a2" id="qqN-bS-pDs"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="14" id="9ex-y7-fvT">
                                 <rect key="frame" x="72" y="264" width="286" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YrQ-M3-4a2" id="pBN-py-BeZ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="14" id="37R-iy-LN1">
                                 <rect key="frame" x="72" y="372" width="286" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YrQ-M3-4a2" id="tPi-Vc-L48"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WnO-fC-aQB">
                                 <rect key="frame" x="244" y="623" width="44" height="33"/>
@@ -206,6 +229,9 @@
                                 <state key="normal" title="Join">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonTapped" destination="YrQ-M3-4a2" eventType="touchUpInside" id="IeZ-ky-OZ0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YQk-UZ-Pp7">
                                 <rect key="frame" x="33" y="111" width="137" height="41"/>
@@ -246,6 +272,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YrQ-M3-4a2" id="Kna-ff-OvY"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -258,10 +287,9 @@
                         <outlet property="birthdayTextField" destination="37R-iy-LN1" id="xE2-RJ-XA1"/>
                         <outlet property="emailImageView" destination="PjX-WO-EAh" id="ey1-d3-r5w"/>
                         <outlet property="emailTextField" destination="9ex-y7-fvT" id="FVj-lw-cYj"/>
-                        <outlet property="joinButton" destination="wea-ME-qcD" id="cc7-Zm-NlS"/>
                         <outlet property="passwordImageView" destination="06s-Ig-9WC" id="D1i-F1-S4T"/>
                         <outlet property="passwordTextField" destination="wqQ-CE-zu3" id="JdD-9n-YeP"/>
-                        <outlet property="signUpLabel" destination="YQk-UZ-Pp7" id="c2y-n7-hvj"/>
+                        <outlet property="submitButton" destination="wea-ME-qcD" id="Njf-j7-zMS"/>
                         <outlet property="usernameImageView" destination="g41-SY-ea0" id="mFl-iu-GWH"/>
                         <outlet property="usernameTextField" destination="Cxp-vf-WCP" id="bPb-62-Qyp"/>
                     </connections>

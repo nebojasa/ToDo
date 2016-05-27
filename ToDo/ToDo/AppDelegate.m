@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "DataManager.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Helpers.h"
+#import "HomeViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate() <CLLocationManagerDelegate>
 
@@ -26,12 +29,38 @@
     [self.locationManager startMonitoringSignificantLocationChanges];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+-(void)registerForNotification{
+    [[NSNotificationCenter defaultCenter] addObserverForName:SHOW_HOME object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([HomeViewController class])];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+        navigationController.navigationBarHidden = YES;
+        
+        self.window.rootViewController = navigationController;
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:SHOW_LOGIN object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([LoginViewController class])];
+        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+        navigationController.navigationBarHidden = YES;
+        
+        self.window.rootViewController = navigationController;
+    }];
+}
+#pragma mark - UIApplicationDelegate
+
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions {
+    [self registerForNotification];
     [self configureLocationManager];
+    
+    if ([Helpers isLoggedIn]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_HOME object:nil];
+    }
     return YES;
 }
-
-#pragma mark - UIApplicationDelegate
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];

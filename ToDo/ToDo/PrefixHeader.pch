@@ -13,5 +13,6 @@
 #import <UIKit/UIKit.h>
 #import "Constanc.h"
 #import "UIViewController+Utilities.h"
+#import "Helpers.h"
 
 #endif

@@ -19,10 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinerView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
+@property (nonatomic) CGFloat containerViewOriginY;
 
--(void)configureTextFieldPlaceholders;
-//-(void)registerForNotification;
-//-(void)prepareForAnimations;
--(void)animate;
--(IBAction)submitButtonTapped;
+- (void)configureTextFieldPlaceholders;
+- (void)registerForNotifications;
+- (void)prepareForAnimations;
+- (void)animate;
+- (IBAction)submitButtonTapped;
 @end
