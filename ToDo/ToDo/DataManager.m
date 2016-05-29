@@ -156,7 +156,7 @@
 
 - (void) saveToDatabase {
     NSError *error = nil;
-    if ([self.manageObjectContext hasChanges] &&![self.manageObjectContext save:&error]) {
+    if ([self.managedObjectContext hasChanges] &&![self.managedObjectContext save:&error]) {
             NSLog(@"Error saving to database: %@, %@", [error localizedDescription], [error userInfo]);
             abort();
     }
