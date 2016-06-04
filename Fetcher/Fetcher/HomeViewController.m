@@ -23,7 +23,7 @@
 
 - (IBAction)menuButtonTapped {
     [[NSNotificationCenter defaultCenter] postNotificationName:OPEN_MENU_NOTIFICATION object:nil];
-}
+ }
 
 #pragma mark - Private API
 

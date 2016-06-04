@@ -90,7 +90,7 @@
     
     [[Fetcher sharedInstance] fetchDataFromURL:@"http://www.brzevesti.net/api/news"];
     // 2. NOTIFICATION
-    [self registerForNotifications];
+    //[self registerForNotifications];
     
     // 3. DELEGATE
     //[Fetcher sharedInstance].delegate = self;
