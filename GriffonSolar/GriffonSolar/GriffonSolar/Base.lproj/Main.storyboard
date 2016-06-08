@@ -21,8 +21,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftw-QT-9lk">
-                                <rect key="frame" x="20" y="573" width="77" height="74"/>
-                                <state key="normal" image="menuButton"/>
+                                <rect key="frame" x="20" y="586" width="60" height="60"/>
+                                <state key="normal" image="menu"/>
                                 <connections>
                                     <segue destination="HVA-tF-lPC" kind="show" id="mKN-ZP-hCQ"/>
                                 </connections>
@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144.5" y="260.5"/>
+            <point key="canvasLocation" x="-19.5" y="340.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rsn-Ao-riH">
@@ -108,6 +108,36 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJX-tt-s9O">
                                 <rect key="frame" x="20" y="20" width="42" height="42"/>
                                 <state key="normal" image="back"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buttons" translatesAutoresizingMaskIntoConstraints="NO" id="BXh-b2-tt2">
+                                <rect key="frame" x="20" y="375" width="335" height="272"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-Qd-k5A">
+                                <rect key="frame" x="44" y="394" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-Co-EOJ">
+                                <rect key="frame" x="157" y="394" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-RC-FlX">
+                                <rect key="frame" x="269" y="394" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKQ-10-awr">
+                                <rect key="frame" x="44" y="481" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6W-3g-f9V">
+                                <rect key="frame" x="157" y="481" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-kY-pzd">
+                                <rect key="frame" x="269" y="481" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBw-fV-nFz">
+                                <rect key="frame" x="44" y="564" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iC-ss-ujB">
+                                <rect key="frame" x="157" y="564" width="60" height="60"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXu-5n-3vC">
+                                <rect key="frame" x="269" y="564" width="60" height="60"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -207,6 +237,7 @@
         <image name="GriffoneiPhone" width="750" height="1334"/>
         <image name="back" width="42" height="42"/>
         <image name="background" width="749" height="1333"/>
-        <image name="menuButton" width="129" height="122"/>
+        <image name="buttons" width="1853" height="1808"/>
+        <image name="menu" width="51" height="51"/>
     </resources>
 </document>
