@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		529E8F551D09C227002A3176 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E8F541D09C227002A3176 /* MapKit.framework */; };
+		529E8F571D09C2A6002A3176 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E8F561D09C2A6002A3176 /* CoreData.framework */; };
+		529E8F591D09CB79002A3176 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529E8F581D09CB79002A3176 /* CoreLocation.framework */; };
 		52AD77461D079ADE001B8511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AD77451D079ADE001B8511 /* main.m */; };
 		52AD77491D079ADE001B8511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AD77481D079ADE001B8511 /* AppDelegate.m */; };
 		52AD774C1D079ADE001B8511 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AD774B1D079ADE001B8511 /* ViewController.m */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		529E8F541D09C227002A3176 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		529E8F561D09C2A6002A3176 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		529E8F581D09CB79002A3176 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		52AD77411D079ADE001B8511 /* GriffonSolar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GriffonSolar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AD77451D079ADE001B8511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52AD77471D079ADE001B8511 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,12 +39,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529E8F591D09CB79002A3176 /* CoreLocation.framework in Frameworks */,
+				529E8F571D09C2A6002A3176 /* CoreData.framework in Frameworks */,
+				529E8F551D09C227002A3176 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		529E8F5A1D09CBAA002A3176 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				529E8F581D09CB79002A3176 /* CoreLocation.framework */,
+				529E8F561D09C2A6002A3176 /* CoreData.framework */,
+				529E8F541D09C227002A3176 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		529E8F5B1D09CC21002A3176 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52AD774A1D079ADE001B8511 /* ViewController.h */,
+				52AD774B1D079ADE001B8511 /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		52AD77381D079ADE001B8511 = {
 			isa = PBXGroup;
 			children = (
@@ -58,12 +87,11 @@
 		52AD77431D079ADE001B8511 /* GriffonSolar */ = {
 			isa = PBXGroup;
 			children = (
+				529E8F5A1D09CBAA002A3176 /* Frameworks */,
 				52AD77471D079ADE001B8511 /* AppDelegate.h */,
 				52AD77481D079ADE001B8511 /* AppDelegate.m */,
-				52AD774A1D079ADE001B8511 /* ViewController.h */,
-				52AD774B1D079ADE001B8511 /* ViewController.m */,
+				529E8F5B1D09CC21002A3176 /* ViewControllers */,
 				52AD774D1D079ADE001B8511 /* Main.storyboard */,
-				52AD77501D079ADE001B8511 /* Assets.xcassets */,
 				52AD77521D079ADE001B8511 /* LaunchScreen.storyboard */,
 				52AD77551D079ADE001B8511 /* Info.plist */,
 				52AD77441D079ADE001B8511 /* Supporting Files */,
@@ -74,6 +102,7 @@
 		52AD77441D079ADE001B8511 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52AD77501D079ADE001B8511 /* Assets.xcassets */,
 				52AD77451D079ADE001B8511 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -110,6 +139,11 @@
 				TargetAttributes = {
 					52AD77401D079ADE001B8511 = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -302,6 +336,7 @@
 				52AD775A1D079ADE001B8511 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
