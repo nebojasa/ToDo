@@ -288,23 +288,32 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="L00-uR-cYo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYA-cT-nkW" userLabel="weatherData">
+                                <rect key="frame" x="43" y="394" width="60" height="60"/>
+                                <state key="normal" image="button"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJX-tt-s9O" userLabel="BackButton">
                                 <rect key="frame" x="32" y="33" width="42" height="42"/>
                                 <state key="normal" image="back"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buttons" translatesAutoresizingMaskIntoConstraints="NO" id="BXh-b2-tt2">
-                                <rect key="frame" x="20" y="375" width="335" height="272"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-Qd-k5A" userLabel="weatherData">
-                                <rect key="frame" x="43" y="394" width="60" height="60"/>
-                                <state key="normal" image="weatherData"/>
+                                <rect key="frame" x="43" y="390" width="60" height="60"/>
+                                <state key="normal" image="weather"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-xh-xR6" userLabel="weatherData">
+                                <rect key="frame" x="157" y="394" width="60" height="60"/>
+                                <state key="normal" image="button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-ni-Enf" userLabel="weatherData">
+                                <rect key="frame" x="266" y="394" width="60" height="60"/>
+                                <state key="normal" image="button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgJ-Co-EOJ">
-                                <rect key="frame" x="157" y="394" width="60" height="60"/>
+                                <rect key="frame" x="169" y="402" width="36" height="46"/>
                                 <state key="normal" image="maps"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfq-RC-FlX">
-                                <rect key="frame" x="266" y="394" width="60" height="60"/>
+                                <rect key="frame" x="273" y="400" width="46" height="48"/>
                                 <state key="normal" image="earth"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-K1-1cQ">
@@ -371,7 +380,7 @@
                                 <rect key="frame" x="20" y="335" width="335" height="312"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XZw-Nq-3HE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="XZw-Nq-3HE">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XZw-Nq-3HE" id="B9R-lp-fKP">
@@ -454,14 +463,14 @@
         <image name="back" width="42" height="42"/>
         <image name="background" width="749" height="1333"/>
         <image name="batery" width="120" height="120"/>
-        <image name="buttons" width="1853" height="1808"/>
+        <image name="button" width="352" height="352"/>
         <image name="earth" width="120" height="120"/>
         <image name="energy" width="120" height="120"/>
         <image name="griffon" width="120" height="120"/>
         <image name="maps" width="120" height="120"/>
         <image name="panel" width="120" height="120"/>
         <image name="tools" width="120" height="120"/>
-        <image name="weatherData" width="120" height="120"/>
+        <image name="weather" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5Tl-vG-OYR"/>
