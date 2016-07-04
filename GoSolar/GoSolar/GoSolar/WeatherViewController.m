@@ -13,6 +13,7 @@
 @end
 
 @implementation WeatherViewController
+
 #pragma mark - Properties
 
 - (NSMutableArray *)itemsArray {//lazy loading..
@@ -22,6 +23,7 @@
     
     return _itemsArray;
 }
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
@@ -66,7 +68,6 @@
     });
 }
 
-
 #pragma mark - UITableViewDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -84,6 +85,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 7;
 }

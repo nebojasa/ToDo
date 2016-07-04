@@ -26,15 +26,12 @@
 		52611B971D25DA7700EC5062 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52611B961D25DA7700EC5062 /* AboutViewController.m */; };
 		52611B9A1D25DB3400EC5062 /* PhotovoltaicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52611B991D25DB3400EC5062 /* PhotovoltaicsViewController.m */; };
 		52611B9D1D25DB7800EC5062 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52611B9C1D25DB7800EC5062 /* SettingsViewController.m */; };
-		52CEB1F41D27249400DB7ECE /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CEB1F31D27249400DB7ECE /* Helpers.m */; };
 		52CEB1F61D27C5E200DB7ECE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CEB1F51D27C5E200DB7ECE /* SystemConfiguration.framework */; };
 		52CEB1F81D27C5EE00DB7ECE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CEB1F71D27C5EE00DB7ECE /* MapKit.framework */; };
 		52CEB1FA1D27C60200DB7ECE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CEB1F91D27C60200DB7ECE /* CoreLocation.framework */; };
-		52CEB1FE1D27C85A00DB7ECE /* WebServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CEB1FD1D27C85A00DB7ECE /* WebServiceManager.m */; };
-		52CEB2031D27CCE700DB7ECE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CEB2021D27CCE700DB7ECE /* Reachability.m */; };
-		52D6A5551D285E3C00C13047 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6A5521D285E3C00C13047 /* FBSDKCoreKit.framework */; };
-		52D6A5561D285E3C00C13047 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6A5531D285E3C00C13047 /* FBSDKLoginKit.framework */; };
-		52D6A5571D285E3C00C13047 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6A5541D285E3C00C13047 /* FBSDKShareKit.framework */; };
+		F4D400001D2A7F9600D458CA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4FFFD1D2A7F9600D458CA /* FBSDKCoreKit.framework */; };
+		F4D400011D2A7F9600D458CA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4FFFE1D2A7F9600D458CA /* FBSDKLoginKit.framework */; };
+		F4D400021D2A7F9600D458CA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4FFFF1D2A7F9600D458CA /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,20 +71,14 @@
 		52611B991D25DB3400EC5062 /* PhotovoltaicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotovoltaicsViewController.m; sourceTree = "<group>"; };
 		52611B9B1D25DB7800EC5062 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		52611B9C1D25DB7800EC5062 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		52CEB1F21D27249400DB7ECE /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helpers.h; path = ../../../../../Cubes_CNG/CNG/CNG/Source/Utilities/Helpers.h; sourceTree = "<group>"; };
-		52CEB1F31D27249400DB7ECE /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helpers.m; path = ../../../../../Cubes_CNG/CNG/CNG/Source/Utilities/Helpers.m; sourceTree = "<group>"; };
 		52CEB1F51D27C5E200DB7ECE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		52CEB1F71D27C5EE00DB7ECE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52CEB1F91D27C60200DB7ECE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		52CEB1FC1D27C85A00DB7ECE /* WebServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServiceManager.h; path = ../../../../ToDo2/ToDo/Source/Utilities/WebServiceManager.h; sourceTree = "<group>"; };
-		52CEB1FD1D27C85A00DB7ECE /* WebServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServiceManager.m; path = ../../../../ToDo2/ToDo/Source/Utilities/WebServiceManager.m; sourceTree = "<group>"; };
-		52CEB1FF1D27C90000DB7ECE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../../../../../Cubes_CNG/CNG/CNG/Source/Utilities/Constants.h; sourceTree = "<group>"; };
 		52CEB2001D27C96600DB7ECE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		52CEB2011D27CCE700DB7ECE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../../../ToDo2/ToDo/Vendors/Reachability/Reachability.h; sourceTree = "<group>"; };
-		52CEB2021D27CCE700DB7ECE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../../../ToDo2/ToDo/Vendors/Reachability/Reachability.m; sourceTree = "<group>"; };
-		52D6A5521D285E3C00C13047 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		52D6A5531D285E3C00C13047 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		52D6A5541D285E3C00C13047 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F4D400031D2A7FF100D458CA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F4D4FFFD1D2A7F9600D458CA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F4D4FFFE1D2A7F9600D458CA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F4D4FFFF1D2A7F9600D458CA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +87,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CEB1FA1D27C60200DB7ECE /* CoreLocation.framework in Frameworks */,
-				52D6A5551D285E3C00C13047 /* FBSDKCoreKit.framework in Frameworks */,
-				52D6A5571D285E3C00C13047 /* FBSDKShareKit.framework in Frameworks */,
-				52D6A5561D285E3C00C13047 /* FBSDKLoginKit.framework in Frameworks */,
+				F4D400001D2A7F9600D458CA /* FBSDKCoreKit.framework in Frameworks */,
+				F4D400021D2A7F9600D458CA /* FBSDKShareKit.framework in Frameworks */,
+				F4D400011D2A7F9600D458CA /* FBSDKLoginKit.framework in Frameworks */,
 				52CEB1F81D27C5EE00DB7ECE /* MapKit.framework in Frameworks */,
 				52CEB1F61D27C5E200DB7ECE /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -120,12 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				525A39571D262A2F003B4A3D /* DataManager.h */,
+				F4D400031D2A7FF100D458CA /* Constants.h */,
 				525A39581D262A2F003B4A3D /* DataManager.m */,
-				52CEB1F21D27249400DB7ECE /* Helpers.h */,
-				52CEB1F31D27249400DB7ECE /* Helpers.m */,
-				52CEB1FC1D27C85A00DB7ECE /* WebServiceManager.h */,
-				52CEB1FD1D27C85A00DB7ECE /* WebServiceManager.m */,
-				52CEB1FF1D27C90000DB7ECE /* Constants.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -232,9 +219,9 @@
 		52CEB1FB1D27C62700DB7ECE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52D6A5521D285E3C00C13047 /* FBSDKCoreKit.framework */,
-				52D6A5531D285E3C00C13047 /* FBSDKLoginKit.framework */,
-				52D6A5541D285E3C00C13047 /* FBSDKShareKit.framework */,
+				F4D4FFFD1D2A7F9600D458CA /* FBSDKCoreKit.framework */,
+				F4D4FFFE1D2A7F9600D458CA /* FBSDKLoginKit.framework */,
+				F4D4FFFF1D2A7F9600D458CA /* FBSDKShareKit.framework */,
 				52CEB1F91D27C60200DB7ECE /* CoreLocation.framework */,
 				52CEB1F71D27C5EE00DB7ECE /* MapKit.framework */,
 				52CEB1F51D27C5E200DB7ECE /* SystemConfiguration.framework */,
@@ -245,8 +232,6 @@
 		52CEB2041D27CCF800DB7ECE /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				52CEB2011D27CCE700DB7ECE /* Reachability.h */,
-				52CEB2021D27CCE700DB7ECE /* Reachability.m */,
 			);
 			name = Reachability;
 			sourceTree = "<group>";
@@ -329,16 +314,13 @@
 				52611B711D25CC5E00EC5062 /* BaseViewController.m in Sources */,
 				52611B8B1D25D8F600EC5062 /* WebViewController.m in Sources */,
 				52611B6E1D25CC5E00EC5062 /* AppDelegate.m in Sources */,
-				52CEB1F41D27249400DB7ECE /* Helpers.m in Sources */,
 				52611B6B1D25CC5E00EC5062 /* main.m in Sources */,
 				52611B881D25D8AD00EC5062 /* MapViewController.m in Sources */,
 				52611B971D25DA7700EC5062 /* AboutViewController.m in Sources */,
 				525A39591D262A2F003B4A3D /* DataManager.m in Sources */,
 				52611B851D25D88600EC5062 /* WeatherViewController.m in Sources */,
-				52CEB1FE1D27C85A00DB7ECE /* WebServiceManager.m in Sources */,
 				52611B9A1D25DB3400EC5062 /* PhotovoltaicsViewController.m in Sources */,
 				52611B821D25CDA500EC5062 /* HomeViewController.m in Sources */,
-				52CEB2031D27CCE700DB7ECE /* Reachability.m in Sources */,
 				52611B9D1D25DB7800EC5062 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +434,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = /Users/macbookpro/Documents/FacebookSDK;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/macbookpro/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/GoSolar",
+				);
 				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = GoSolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -466,7 +451,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = /Users/macbookpro/Documents/FacebookSDK;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/macbookpro/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/GoSolar",
+				);
 				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = GoSolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

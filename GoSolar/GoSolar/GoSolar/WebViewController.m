@@ -7,7 +7,6 @@
 //
 
 #import "WebViewController.h"
-#import "WebServiceManager.h"
 
 @interface WebViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -20,9 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([[WebServiceManager sharedInstance] hasInternetConnection]) {
+    
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:GRIFFON_URL]]];
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
