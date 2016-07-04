@@ -664,7 +664,7 @@
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ka-pl-W4U">
                                         <rect key="frame" x="137" y="346" width="326" height="71"/>
-                                        <color key="backgroundColor" red="1" green="0.59028480719999998" blue="0.1104317059" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="326" id="aV3-rw-Xce"/>
                                             <constraint firstAttribute="height" constant="71" id="yxC-0V-U05"/>

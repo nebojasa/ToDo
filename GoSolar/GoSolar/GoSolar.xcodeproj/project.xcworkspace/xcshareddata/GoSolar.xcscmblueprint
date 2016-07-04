@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6C4D490E36DE2BC28D3EEF3B9B1D2C119F145ACE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6C4D490E36DE2BC28D3EEF3B9B1D2C119F145ACE" : 0,
+    "611812B8BE651E774C665572228F2002420573B4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "545EA842-524D-497B-96C2-FF7D246DB522",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6C4D490E36DE2BC28D3EEF3B9B1D2C119F145ACE" : "Git\/",
+    "611812B8BE651E774C665572228F2002420573B4" : "..\/Cubes_CNG"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GoSolar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GoSolar\/GoSolar\/GoSolar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.cubes.rs\/djuro.alfirevic\/CNG.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "611812B8BE651E774C665572228F2002420573B4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nebojasa\/ToDo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C4D490E36DE2BC28D3EEF3B9B1D2C119F145ACE"
+    }
+  ]
+}

@@ -49,15 +49,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *buttonToggleLoginState =[UIButton buttonWithType:UIButtonTypeCustom];
-    buttonToggleLoginState.backgroundColor=[UIColor blueColor];
-    buttonToggleLoginState.frame=CGRectMake(0,0,180,40);
-    buttonToggleLoginState.center = self.view.center;
-    [buttonToggleLoginState setTitle: @"My Login Button" forState: UIControlStateNormal];
-    
-    [buttonToggleLoginState addTarget:self action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:buttonToggleLoginState];
+//    UIButton *buttonToggleLoginState =[UIButton buttonWithType:UIButtonTypeCustom];
+//    buttonToggleLoginState.backgroundColor=[UIColor blueColor];
+//    buttonToggleLoginState.frame=CGRectMake(0,0,180,40);
+//    buttonToggleLoginState.center = self.view.center;
+//    [buttonToggleLoginState setTitle: @"My Login Button" forState: UIControlStateNormal];
+//    
+//    [buttonToggleLoginState addTarget:self action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.view addSubview:buttonToggleLoginState];
 }
 
 
